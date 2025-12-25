@@ -13,7 +13,7 @@ public class ProductService implements IProductService {
 
     private IProductRepository repository;
 
-    public ProductService(@Qualifier("productRepositoryFoo") IProductRepository repository) {
+    public ProductService(@Qualifier("productList") IProductRepository repository) {
         this.repository = repository;
     }
 

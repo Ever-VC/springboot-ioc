@@ -4,7 +4,7 @@ import com.evervc.springboot.di.app.springbootdi.models.Product;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-@Repository
+@Repository("productList")
 public class ProductRepositoryFoo implements IProductRepository {
 
     @Override
