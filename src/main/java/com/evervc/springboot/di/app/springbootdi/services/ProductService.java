@@ -13,8 +13,7 @@ public class ProductService implements IProductService {
 
     private IProductRepository repository;
 
-    @Autowired
-    public void setRepository(IProductRepository repository) {
+    public ProductService(IProductRepository repository) {
         this.repository = repository;
     }
 
