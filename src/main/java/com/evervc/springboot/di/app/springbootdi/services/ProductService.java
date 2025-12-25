@@ -2,7 +2,6 @@ package com.evervc.springboot.di.app.springbootdi.services;
 
 import com.evervc.springboot.di.app.springbootdi.models.Product;
 import com.evervc.springboot.di.app.springbootdi.repositories.IProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
