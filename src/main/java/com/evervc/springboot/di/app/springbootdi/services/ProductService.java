@@ -13,7 +13,8 @@ public class ProductService {
     public List<Product> findAll() {
         // Modificando el valor del precio para todos los objetos
         return repository.findAll().stream().map(product -> {
-            Product p = new Product(product.getId(), product.getName(), product.getPrice());
+            //Product p = new Product(product.getId(), product.getName(), product.getPrice());
+            Product p = (Product) product.clone();
             p.setPrice((long) (product.getPrice() * 1.25));
             return p;
         }).toList();
