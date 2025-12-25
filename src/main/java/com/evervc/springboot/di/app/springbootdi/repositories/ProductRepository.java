@@ -1,12 +1,14 @@
 package com.evervc.springboot.di.app.springbootdi.repositories;
 
 import com.evervc.springboot.di.app.springbootdi.models.Product;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
 import java.util.List;
 
 // Esta es la capa de acceso a datos (base de datos, arreglos, API REST, etc)
+@Primary //Define que este es el repositorio principal para hacer la inyeccion de depencias desde la interfaz y no el ProeductRepositoryFoo
 @Repository
 public class ProductRepository implements IProductRepository {
 
