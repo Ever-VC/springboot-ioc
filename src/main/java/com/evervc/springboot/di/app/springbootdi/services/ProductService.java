@@ -11,8 +11,12 @@ import java.util.List;
 @Service
 public class ProductService implements IProductService {
 
-    @Autowired
     private IProductRepository repository;
+
+    @Autowired
+    public void setRepository(IProductRepository repository) {
+        this.repository = repository;
+    }
 
     @Override
     public List<Product> findAll() {
