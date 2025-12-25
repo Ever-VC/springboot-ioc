@@ -14,11 +14,8 @@ import java.util.List;
 @RequestMapping("/api/v1")
 public class ProductController {
 
+    @Autowired
     private IProductService service;
-
-    public ProductController(IProductService service) {
-        this.service = service;
-    }
 
     @GetMapping
     public List<Product> list(){
