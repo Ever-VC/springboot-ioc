@@ -1,15 +1,20 @@
 package com.evervc.springboot.di.app.springbootdi.services;
 
 import com.evervc.springboot.di.app.springbootdi.models.Product;
-import com.evervc.springboot.di.app.springbootdi.repositories.ProductRepository;
+import com.evervc.springboot.di.app.springbootdi.repositories.IProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 // Esta es la capa de negocios, donde se pueden modificar los datos obtenidos del repositorio, según se necesiten
-public class ProductService {
+@Service
+public class ProductService implements IProductService {
 
-    private ProductRepository repository = new ProductRepository();
+    @Autowired
+    private IProductRepository repository;
 
+    @Override
     public List<Product> findAll() {
         // Modificando el valor del precio para todos los objetos
         return repository.findAll().stream().map(product -> {
@@ -20,6 +25,7 @@ public class ProductService {
         }).toList();
     }
 
+    @Override
     public Product findById(Long id) {
         return repository.findById(id);
     }

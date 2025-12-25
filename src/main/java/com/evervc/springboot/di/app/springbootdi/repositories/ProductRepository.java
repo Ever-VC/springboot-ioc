@@ -1,11 +1,14 @@
 package com.evervc.springboot.di.app.springbootdi.repositories;
 
 import com.evervc.springboot.di.app.springbootdi.models.Product;
+import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class ProductRepository {
+// Esta es la capa de acceso a datos (base de datos, arreglos, API REST, etc)
+@Repository
+public class ProductRepository implements IProductRepository {
 
     private List<Product> data;
 
@@ -17,10 +20,12 @@ public class ProductRepository {
         );
     }
 
+    @Override
     public List<Product> findAll() {
         return data;
     }
 
+    @Override
     public Product findById(Long id) {
         //return data.stream().filter(p -> p.getId().equals(id)).findFirst().orElseThrow();
         return data.stream().filter(p -> p.getId().equals(id)).findFirst().orElse(null);
