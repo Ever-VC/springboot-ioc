@@ -2,6 +2,7 @@ package com.evervc.springboot.di.app.springbootdi.services;
 
 import com.evervc.springboot.di.app.springbootdi.models.Product;
 import com.evervc.springboot.di.app.springbootdi.repositories.IProductRepository;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public class ProductService implements IProductService {
 
     private IProductRepository repository;
 
-    public ProductService(IProductRepository repository) {
+    public ProductService(@Qualifier("productRepositoryFoo") IProductRepository repository) {
         this.repository = repository;
     }
 
