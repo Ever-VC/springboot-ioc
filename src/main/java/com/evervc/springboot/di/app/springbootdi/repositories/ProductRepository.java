@@ -4,13 +4,15 @@ import com.evervc.springboot.di.app.springbootdi.models.Product;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.Arrays;
 import java.util.List;
 
 // Esta es la capa de acceso a datos (base de datos, arreglos, API REST, etc)
 @Primary //Define que este es el repositorio principal para hacer la inyeccion de depencias desde la interfaz y no el ProeductRepositoryFoo
-@RequestScope // Mutabilidad por http Request, es decir qie se modifican por cada usuario conectado
+//@RequestScope // Mutabilidad por http Request, es decir qie se modifican por cada usuario conectado
+//@SessionScope // Scope de cada sesión (Los datos se restaurarán al cerrar el navegador)
 @Repository("products")
 public class ProductRepository implements IProductRepository {
 
