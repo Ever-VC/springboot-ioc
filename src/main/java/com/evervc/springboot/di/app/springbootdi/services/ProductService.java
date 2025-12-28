@@ -13,7 +13,7 @@ public class ProductService implements IProductService {
 
     private IProductRepository repository;
 
-    public ProductService(@Qualifier("productList") IProductRepository repository) {
+    public ProductService(@Qualifier("products") IProductRepository repository) {
         this.repository = repository;
     }
 
@@ -25,6 +25,9 @@ public class ProductService implements IProductService {
             Product p = (Product) product.clone();
             p.setPrice((long) (product.getPrice() * 1.25));
             return p;
+            // PAra mantener mutable los datos
+            /*product.setPrice((long) (product.getPrice() * 1.25));
+            return product;*/
         }).toList();
     }
 
