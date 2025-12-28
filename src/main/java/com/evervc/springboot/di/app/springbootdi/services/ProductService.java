@@ -23,13 +23,13 @@ public class ProductService implements IProductService {
         return repository.findAll().stream().map(product -> {
             //Product p = new Product(product.getId(), product.getName(), product.getPrice());
 
-            /*Product p = (Product) product.clone();
+            Product p = (Product) product.clone();
             p.setPrice((long) (product.getPrice() * 1.25));
-            return p;*/
+            return p;
 
             // Para mantener mutable los datos
-            product.setPrice((long) (product.getPrice() * 1.25));
-            return product;
+            /*product.setPrice((long) (product.getPrice() * 1.25));
+            return product;*/
         }).toList();
     }
 
