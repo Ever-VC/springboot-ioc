@@ -13,8 +13,16 @@ public class ProductRepositoryJson implements IProductRepository {
 
     private List<Product> list;
 
+    public ProductRepositoryJson(Resource resource) {
+        readValuesOfJSON(resource);
+    }
+
     public ProductRepositoryJson() {
         Resource resource = new ClassPathResource("database/products.json");
+        readValuesOfJSON(resource);
+    }
+
+    private void readValuesOfJSON(Resource resource) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             list = Arrays.asList(objectMapper.readValue(resource.getFile(), Product[].class));
