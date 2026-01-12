@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Memoria Kingston 16GB DDR4",
+    "price": 145
+  },
+  {
+    "id": 3,
+    "name": "Procesador Intel Core i5 11400H",
+    "price": 512
+  },
+  {
+    "id": 2,
+    "name": "Teclado Redragon fits pro3",
+    "price": 69
+  }
+]
