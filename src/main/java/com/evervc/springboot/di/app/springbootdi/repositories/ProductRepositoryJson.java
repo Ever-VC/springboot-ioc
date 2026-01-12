@@ -25,7 +25,7 @@ public class ProductRepositoryJson implements IProductRepository {
 
     @Override
     public List<Product> findAll() {
-        return List.of();
+        return list;
     }
 
     @Override
